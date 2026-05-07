@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Easy Smoko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F4521E;
+    --orange-dark: #D03D0A;
+    --cream: #FFF8F5;
+    --dark: #1A0A00;
+    --mid: #6B3010;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 40px;
+    background: rgba(255,248,245,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(244,82,30,0.1);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { width: 36px; height: 36px; border-radius: 9px; }
+  .nav-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 19px; color: var(--orange); letter-spacing: -0.5px; }
+  .nav-back { color: var(--mid); text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+
+  .hero {
+    background: var(--dark); padding: 120px 24px 60px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(244,82,30,0.1) 0%, transparent 70%); pointer-events: none; }
+  .hero-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  .hero h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(36px, 6vw, 64px); color: white; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 16px; }
+  .hero-date { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+  .content {
+    max-width: 760px; margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  .section {
+    background: white; border-radius: 20px;
+    padding: 32px 36px; margin-bottom: 16px;
+    border: 1px solid rgba(244,82,30,0.08);
+  }
+  .section h2 {
+    font-family: 'Nunito', sans-serif; font-weight: 900;
+    font-size: 20px; color: var(--dark); margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1.5px solid rgba(244,82,30,0.1);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section h2 .icon { font-size: 20px; }
+  .section p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 12px; }
+  .section p:last-child { margin-bottom: 0; }
+  .section a { color: var(--orange); text-decoration: none; word-break: break-all; }
+  .section a:hover { text-decoration: underline; }
+
+  .section ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .section ul li { font-size: 15px; color: var(--mid); line-height: 1.65; display: flex; align-items: flex-start; gap: 10px; }
+  .section ul li::before { content: '•'; color: var(--orange); font-weight: 900; font-size: 18px; flex-shrink: 0; margin-top: -1px; }
+
+  .highlight {
+    background: rgba(244,82,30,0.06); border-left: 3px solid var(--orange);
+    border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 14px 0;
+    font-size: 14px; color: var(--mid); line-height: 1.65;
+  }
+
+  footer { background: #0E0600; padding: 44px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo img { width: 30px; border-radius: 7px; }
+  .footer-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 17px; color: white; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-links a:hover { color: #FF7A47; }
+  .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; width: 100%; }
+
+  @media (max-width: 640px) {
+    nav { padding: 12px 20px; }
+    .section { padding: 24px 20px; }
+    footer { flex-direction: column; padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="icon.png" alt="Easy Smoko">
+    <span>Easy Smoko</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Terms &amp; Conditions</h1>
+  <p class="hero-date">Effective date: 28 April 2026</p>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <p>These Terms apply to the Easy Smoko mobile application ("App") operated by Easy Smoko ("we", "us"). By downloading or using the App you agree to these Terms.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">💳</span> Subscriptions and Billing</h2>
+    <p>Easy Smoko offers free and paid subscription tiers. Paid plans are billed through the Apple App Store on a monthly basis. By subscribing you authorise Apple to charge your payment method on a recurring basis until you cancel.</p>
+    <p>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period. You can manage or cancel your subscription at any time via <strong>Settings → Apple ID → Subscriptions</strong> on your iPhone.</p>
+    <div class="highlight">All billing, receipts, and refunds for in-app purchases are handled by Apple under their <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank">App Store terms</a>. We do not process payments directly and cannot issue refunds — please contact Apple for refund requests.</div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">📊</span> Financial Figures Are Estimates Only</h2>
+    <p>The GST/BAS summaries, invoice totals, expense calculations, and profit figures produced by the App are <strong>estimates only</strong>. They are not financial, tax, or accounting advice.</p>
+    <p>Always verify figures with a registered accountant or BAS agent before lodging with the ATO. Easy Smoko accepts no liability for errors, omissions, or losses arising from reliance on these figures.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🤙</span> AI Assistant (Ol'mate)</h2>
+    <p>The App uses AI (powered by Anthropic Claude) to help you manage jobs, invoices, and quotes. Ol'mate's responses are automated and may be incorrect or incomplete.</p>
+    <div class="highlight">Do not rely on Ol'mate for legal, financial, or safety decisions. We are not liable for actions taken based on AI-generated content.</div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🔒</span> Your Data</h2>
+    <p>Your business data (jobs, invoices, clients, etc.) is stored securely using Supabase. We do not sell your data to third parties. You own your data and can request deletion by deleting your account in the App or by emailing us.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🔗</span> Third-Party Services</h2>
+    <p>The App relies on the following third-party services, each governed by their own terms:</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/legal/consumer-terms" target="_blank">Anthropic (Claude) — Consumer Terms</a></li>
+      <li><a href="https://supabase.com/terms" target="_blank">Supabase — Terms of Service</a></li>
+      <li><a href="https://www.revenuecat.com/terms" target="_blank">RevenueCat — Terms of Service</a></li>
+      <li><a href="https://expo.dev/terms" target="_blank">Expo — Terms of Service</a></li>
+      <li><a href="https://sentry.io/terms/" target="_blank">Sentry — Terms of Service</a></li>
+      <li><a href="https://elevenlabs.io/terms" target="_blank">ElevenLabs — Terms of Service</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">©️</span> Intellectual Property</h2>
+    <p>All trademarks, content, and code in the App remain the property of Easy Smoko. You may not copy, modify, reverse engineer, or create derivative works from the App.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">⚖️</span> Limitation of Liability</h2>
+    <p>To the maximum extent permitted by Australian law, Easy Smoko's total liability to you for any claim arising from use of the App is limited to the amount you paid us in the 12 months preceding the claim. We are not liable for indirect, incidental, or consequential losses.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🚫</span> Termination</h2>
+    <p>We may suspend or terminate your account if you breach these Terms. You may delete your account at any time from the App. On termination, your right to use the App ends immediately.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">📝</span> Changes</h2>
+    <p>We may update these Terms from time to time. Continued use of the App after changes are posted constitutes acceptance. We will notify you of material changes via the App or email.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🇦🇺</span> Governing Law</h2>
+    <p>These Terms are governed by the laws of Australia. Any disputes are subject to the exclusive jurisdiction of the courts of Australia.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">✉️</span> Contact</h2>
+    <p>Questions? Email us at <a href="mailto:contact@easysmoko.com.au">contact@easysmoko.com.au</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="icon.png" alt="Easy Smoko">
+    <span>Easy Smoko</span>
+  </div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy policy</a>
+    <a href="terms.html">Terms of use</a>
+    <a href="mailto:contact@easysmoko.com.au">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 Easy Smoko. Built for Australian tradies.</p>
+</footer>
+
+</body>
+</html>
