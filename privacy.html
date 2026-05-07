@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Easy Smoko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F4521E;
+    --orange-dark: #D03D0A;
+    --cream: #FFF8F5;
+    --dark: #1A0A00;
+    --mid: #6B3010;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 40px;
+    background: rgba(255,248,245,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(244,82,30,0.1);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { width: 36px; height: 36px; border-radius: 9px; }
+  .nav-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 19px; color: var(--orange); letter-spacing: -0.5px; }
+  .nav-back { color: var(--mid); text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-back:hover { opacity: 1; }
+
+  .hero {
+    background: var(--dark); padding: 120px 24px 60px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(244,82,30,0.1) 0%, transparent 70%); pointer-events: none; }
+  .hero-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  .hero h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(36px, 6vw, 64px); color: white; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 16px; }
+  .hero-date { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+  .content { max-width: 760px; margin: 0 auto; padding: 64px 24px 100px; }
+
+  .section { background: white; border-radius: 20px; padding: 32px 36px; margin-bottom: 16px; border: 1px solid rgba(244,82,30,0.08); }
+  .section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px; color: var(--dark); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1.5px solid rgba(244,82,30,0.1); display: flex; align-items: center; gap: 10px; }
+  .section h2 .icon { font-size: 20px; }
+  .section p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 12px; }
+  .section p:last-child { margin-bottom: 0; }
+  .section a { color: var(--orange); text-decoration: none; word-break: break-all; }
+  .section a:hover { text-decoration: underline; }
+  .section ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .section ul li { font-size: 15px; color: var(--mid); line-height: 1.65; display: flex; align-items: flex-start; gap: 10px; }
+  .section ul li::before { content: '•'; color: var(--orange); font-weight: 900; font-size: 18px; flex-shrink: 0; margin-top: -1px; }
+
+  .highlight { background: rgba(244,82,30,0.06); border-left: 3px solid var(--orange); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 14px 0; font-size: 14px; color: var(--mid); line-height: 1.65; }
+
+  /* Third party table */
+  .third-party-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+  .third-party-table th { text-align: left; padding: 10px 14px; background: rgba(244,82,30,0.06); color: var(--dark); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .third-party-table th:first-child { border-radius: 8px 0 0 8px; }
+  .third-party-table th:last-child { border-radius: 0 8px 8px 0; }
+  .third-party-table td { padding: 12px 14px; color: var(--mid); border-bottom: 1px solid rgba(244,82,30,0.07); vertical-align: top; line-height: 1.55; }
+  .third-party-table tr:last-child td { border-bottom: none; }
+  .third-party-table a { color: var(--orange); text-decoration: none; }
+  .third-party-table a:hover { text-decoration: underline; }
+
+  .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .right-item { background: rgba(244,82,30,0.05); border-radius: 12px; padding: 16px; }
+  .right-item .right-icon { font-size: 20px; margin-bottom: 8px; }
+  .right-item h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; color: var(--dark); margin-bottom: 4px; }
+  .right-item p { font-size: 13px; color: var(--mid); line-height: 1.55; margin: 0; }
+
+  footer { background: #0E0600; padding: 44px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo img { width: 30px; border-radius: 7px; }
+  .footer-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 17px; color: white; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-links a:hover { color: #FF7A47; }
+  .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; width: 100%; }
+
+  @media (max-width: 640px) {
+    nav { padding: 12px 20px; }
+    .section { padding: 24px 20px; }
+    .rights-grid { grid-template-columns: 1fr; }
+    .third-party-table { font-size: 12px; }
+    .third-party-table th, .third-party-table td { padding: 8px 10px; }
+    footer { flex-direction: column; padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="icon.png" alt="Easy Smoko">
+    <span>Easy Smoko</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-date">Effective date: 28 April 2026</p>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <p>This Privacy Policy explains how Easy Smoko ("we", "us") collects, uses, and stores your information when you use the Easy Smoko app ("App"). Easy Smoko is operated under Australian privacy law (Privacy Act 1988).</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">📋</span> What We Collect</h2>
+    <p><strong>Information you provide:</strong></p>
+    <ul>
+      <li>Name and email address (account registration)</li>
+      <li>Business details (ABN, phone, address, bank details for invoices)</li>
+      <li>Client names, addresses, and contact details you enter</li>
+      <li>Job, quote, and invoice data you create</li>
+      <li>Voice and audio data when using the Ol'mate voice assistant (processed by Anthropic and ElevenLabs)</li>
+      <li>Photos you attach to jobs</li>
+    </ul>
+    <p style="margin-top:16px"><strong>Automatically collected:</strong></p>
+    <ul>
+      <li>App crash reports and error logs (via Sentry)</li>
+      <li>Basic usage data (via Expo/EAS)</li>
+    </ul>
+    <div class="highlight">We do not collect precise device location.</div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🎯</span> How We Use Your Information</h2>
+    <p>We use your data solely to:</p>
+    <ul>
+      <li>Provide and operate the App (store your jobs, invoices, quotes, and clients)</li>
+      <li>Process voice commands through Ol'mate</li>
+      <li>Generate PDF invoices and quotes</li>
+      <li>Sync with accounting integrations you connect (Xero, MYOB) — only when you explicitly connect them</li>
+      <li>Send transactional notifications you request (job reminders, invoice due dates)</li>
+      <li>Diagnose crashes and improve the App</li>
+    </ul>
+    <div class="highlight">We do not use your data for advertising. We do not sell your data.</div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🗄️</span> Data Storage</h2>
+    <p>Your data is stored using Supabase (servers in the United States). By using the App you consent to this transfer. We use industry-standard encryption in transit (TLS) and at rest.</p>
+    <p>Voice audio sent to Ol'mate is processed by Anthropic (Claude) and ElevenLabs and is subject to their data retention policies. We do not store raw audio recordings ourselves.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🔗</span> Third-Party Services</h2>
+    <p>The App shares data with the following services only as necessary to operate:</p>
+    <table class="third-party-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>What they receive</th>
+          <th>Privacy policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Supabase</strong></td>
+          <td>All app data (stored)</td>
+          <td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic (Claude)</strong></td>
+          <td>Voice transcripts for Ol'mate</td>
+          <td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>ElevenLabs</strong></td>
+          <td>Text for voice synthesis</td>
+          <td><a href="https://elevenlabs.io/privacy" target="_blank">elevenlabs.io/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>RevenueCat</strong></td>
+          <td>Subscription status</td>
+          <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>Payment and billing</td>
+          <td><a href="https://www.apple.com/privacy" target="_blank">apple.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Sentry</strong></td>
+          <td>Crash reports (anonymised)</td>
+          <td><a href="https://sentry.io/privacy/" target="_blank">sentry.io/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Expo</strong></td>
+          <td>App delivery and updates</td>
+          <td><a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Xero / MYOB</strong></td>
+          <td>Invoice data (only if you connect)</td>
+          <td>Their respective privacy policies</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px">We do not share your data with any other third parties.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🔄</span> Accounting Integrations</h2>
+    <p>If you connect Xero or MYOB, invoice data is transmitted to those services on your behalf. You control this connection and can disconnect at any time from Settings. We only send data you explicitly create in the App.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">✅</span> Your Rights</h2>
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="right-icon">👁️</div>
+        <h3>Access</h3>
+        <p>All your data is visible within the App at any time.</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">📤</div>
+        <h3>Export</h3>
+        <p>Contact us and we'll provide a copy of your data.</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">🗑️</div>
+        <h3>Delete</h3>
+        <p>Delete your account via Settings → Delete Account or email us. Processed within 30 days.</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">✏️</div>
+        <h3>Correct</h3>
+        <p>Edit your data directly in the App at any time.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🗓️</span> Data Retention</h2>
+    <p>We retain your data while your account is active. When you delete your account, your data is permanently removed from our systems within 30 days. Backups may retain data for up to 90 days after deletion.</p>
+    <p>Voice data processed by Anthropic and ElevenLabs is subject to their own retention policies.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">👶</span> Children</h2>
+    <p>The App is not intended for anyone under 18. We do not knowingly collect data from minors. If you believe a minor has created an account, contact us at <a href="mailto:contact@easysmoko.com.au">contact@easysmoko.com.au</a> and we will delete it.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">🔐</span> Security</h2>
+    <p>We use TLS encryption for all data in transit and rely on Supabase's SOC 2-compliant infrastructure for storage. Access to your data is protected by row-level security — only your account can access your business data.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">📝</span> Changes</h2>
+    <p>We may update this policy. We'll notify you via the App for material changes. Continued use after changes are posted constitutes acceptance.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">✉️</span> Contact</h2>
+    <p>Privacy questions: <a href="mailto:contact@easysmoko.com.au">contact@easysmoko.com.au</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="icon.png" alt="Easy Smoko">
+    <span>Easy Smoko</span>
+  </div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy policy</a>
+    <a href="terms.html">Terms of use</a>
+    <a href="mailto:contact@easysmoko.com.au">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 Easy Smoko. Built for Australian tradies.</p>
+</footer>
+
+</body>
+</html>
