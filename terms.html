@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --orange: #F4521E;
-    --orange-dark: #D03D0A;
-    --orange-light: #FF7A47;
-    --cream: #FFF8F5;
+    --orange: #C96000;
+    --orange-dark: #A84E00;
+    --orange-light: #E07800;
+    --cream: #FFF9F2;
     --dark: #1A0A00;
     --mid: #7A3A1A;
     --white: #FFFFFF;
@@ -24,9 +24,9 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 16px 40px;
-    background: rgba(255,248,245,0.92);
+    background: rgba(255,249,242,0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1.5px solid rgba(244,82,30,0.12);
+    border-bottom: 1.5px solid rgba(201,96,0,0.12);
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .nav-logo img { width: 38px; height: 38px; border-radius: 10px; }
@@ -42,7 +42,7 @@
   .doc-hero::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 40% 50%, rgba(244,82,30,0.15) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 40% 50%, rgba(201,96,0,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
   .doc-hero .label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 16px; }
@@ -55,7 +55,7 @@
     font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 24px;
     color: var(--dark); margin-top: 52px; margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(244,82,30,0.15);
+    border-bottom: 2px solid rgba(201,96,0,0.15);
   }
   .doc-body h2:first-child { margin-top: 0; }
   .doc-body p { font-size: 16px; color: var(--mid); line-height: 1.75; margin-bottom: 14px; }
@@ -64,13 +64,13 @@
   .doc-body a { color: var(--orange); }
 
   .doc-card {
-    background: white; border-radius: 20px; border: 1.5px solid rgba(244,82,30,0.12);
+    background: white; border-radius: 20px; border: 1.5px solid rgba(201,96,0,0.12);
     padding: 28px 32px; margin-bottom: 14px;
   }
   .doc-card p { margin-bottom: 0; }
 
   .highlight-card {
-    background: rgba(244,82,30,0.06); border-radius: 20px; border: 1.5px solid rgba(244,82,30,0.2);
+    background: rgba(201,96,0,0.06); border-radius: 20px; border: 1.5px solid rgba(201,96,0,0.2);
     padding: 28px 32px; margin-bottom: 28px;
   }
   .highlight-card p { margin-bottom: 0; color: var(--dark); font-weight: 500; }
