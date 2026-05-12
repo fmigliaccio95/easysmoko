@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZ Smoko — Admin done in a smoko break</title>
+<title>SRRTED. — Your AI tradie admin assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +13,7 @@
     --orange-light: #FF7A47;
     --cream: #FFF8F5;
     --dark: #1A0A00;
-    --mid: #7A3A1A;
+    --mid: #6B3010;
     --white: #FFFFFF;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,306 +23,397 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 40px;
-    background: rgba(255,248,245,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1.5px solid rgba(244,82,30,0.12);
+    padding: 14px 40px;
+    background: rgba(255,248,245,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(244,82,30,0.1);
   }
-  .nav-logo { display: flex; align-items: center; gap: 10px; }
-  .nav-logo img { width: 38px; height: 38px; border-radius: 10px; }
-  .nav-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px; color: var(--orange); letter-spacing: -0.5px; }
-  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 15px; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { width: 36px; height: 36px; border-radius: 9px; }
+  .nav-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 19px; color: var(--orange); letter-spacing: -0.5px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 15px; opacity: 0.65; transition: opacity 0.2s; }
   .nav-links a:hover { opacity: 1; }
-  .nav-cta { background: var(--orange); color: white; border: none; border-radius: 50px; padding: 10px 22px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, background 0.15s; text-decoration: none; }
+  .nav-cta { background: var(--orange); color: white; border: none; border-radius: 50px; padding: 10px 22px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, background 0.15s; text-decoration: none; }
   .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
 
   .hero {
     min-height: 100vh; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center;
-    padding: 120px 24px 80px; position: relative; overflow: hidden;
+    padding: 130px 24px 90px; position: relative; overflow: hidden;
   }
-  .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18; pointer-events: none; }
-  .hero-blob-1 { width: 600px; height: 600px; background: var(--orange); top: -100px; right: -150px; }
-  .hero-blob-2 { width: 400px; height: 400px; background: var(--orange-light); bottom: -80px; left: -100px; }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(244,82,30,0.1); border: 1.5px solid rgba(244,82,30,0.25);
-    border-radius: 50px; padding: 6px 16px; margin-bottom: 32px;
-    font-size: 14px; font-weight: 600; color: var(--orange-dark);
-    animation: fadeUp 0.6s ease both;
-  }
-  .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); animation: pulse 1.8s infinite; }
-
-  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
-
-  .hero h1 {
-    font-family: 'Nunito', sans-serif; font-weight: 900;
-    font-size: clamp(48px, 8vw, 88px); line-height: 1.0; letter-spacing: -2px;
-    color: var(--dark); margin-bottom: 24px; animation: fadeUp 0.6s 0.1s ease both;
-  }
+  .hero-blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.15; pointer-events: none; }
+  .hero-blob-1 { width: 700px; height: 700px; background: var(--orange); top: -150px; right: -200px; }
+  .hero-blob-2 { width: 500px; height: 500px; background: var(--orange-light); bottom: -100px; left: -150px; }
+  .hero-logo { width: 96px; height: 96px; border-radius: 22px; margin-bottom: 28px; box-shadow: 0 16px 50px rgba(244,82,30,0.28); animation: fadeUp 0.5s ease both; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,82,30,0.09); border: 1.5px solid rgba(244,82,30,0.22); border-radius: 50px; padding: 7px 18px; margin-bottom: 28px; font-size: 13px; font-weight: 700; color: var(--orange-dark); animation: fadeUp 0.5s 0.05s ease both; }
+  .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); animation: pulse 2s infinite; flex-shrink: 0; }
+  .hero h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(46px, 8vw, 86px); line-height: 1.0; letter-spacing: -2.5px; color: var(--dark); margin-bottom: 10px; animation: fadeUp 0.5s 0.1s ease both; }
   .hero h1 .orange { color: var(--orange); }
-  .hero p { font-size: clamp(17px, 2.5vw, 21px); color: var(--mid); max-width: 560px; line-height: 1.6; margin-bottom: 44px; animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-sub { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(22px, 3.5vw, 38px); color: var(--mid); letter-spacing: -0.5px; margin-bottom: 22px; animation: fadeUp 0.5s 0.13s ease both; }
+  .hero p { font-size: clamp(16px, 2vw, 19px); color: var(--mid); max-width: 540px; line-height: 1.65; margin-bottom: 44px; animation: fadeUp 0.5s 0.16s ease both; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.5s 0.22s ease both; }
 
-  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary { background: var(--orange); color: white; border: none; border-radius: 50px; padding: 15px 34px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s; box-shadow: 0 8px 28px rgba(244,82,30,0.35); text-decoration: none; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(244,82,30,0.45); background: var(--orange-dark); }
+  .btn-ghost { background: transparent; color: var(--dark); border: 1.5px solid rgba(26,10,0,0.16); border-radius: 50px; padding: 15px 34px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color 0.15s, transform 0.15s, color 0.15s; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
 
-  .btn-primary {
-    background: var(--orange); color: white; border: none; border-radius: 50px;
-    padding: 16px 36px; font-size: 17px; font-weight: 700; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-    box-shadow: 0 8px 30px rgba(244,82,30,0.35); text-decoration: none; display: inline-block;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(244,82,30,0.45); background: var(--orange-dark); }
+  .olmate-section { background: var(--dark); padding: 110px 24px; position: relative; overflow: hidden; }
+  .olmate-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(244,82,30,0.12) 0%, transparent 70%); pointer-events: none; }
+  .olmate-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .olmate-text .section-label { color: var(--orange-light); }
+  .olmate-text p { color: rgba(255,255,255,0.55); font-size: 17px; line-height: 1.7; margin-bottom: 20px; }
 
-  .btn-secondary {
-    background: transparent; color: var(--dark); border: 2px solid rgba(26,10,0,0.18); border-radius: 50px;
-    padding: 16px 36px; font-size: 17px; font-weight: 600; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; transition: border-color 0.15s, transform 0.15s, color 0.15s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
+  .voice-ui { background: #111318; border-radius: 28px; border: 1px solid rgba(255,255,255,0.08); padding: 28px 24px; }
+  .voice-ui-header { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+  .voice-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 0 0 0 6px rgba(244,82,30,0.12); }
+  .voice-name { color: white; font-weight: 700; font-size: 15px; }
+  .voice-status { color: rgba(255,255,255,0.35); font-size: 12px; }
+  .chat-bubble { border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; max-width: 88%; font-size: 14px; line-height: 1.55; }
+  .chat-user { background: rgba(244,82,30,0.18); color: rgba(255,255,255,0.85); margin-left: auto; border-bottom-right-radius: 4px; }
+  .chat-olmate { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8); border-bottom-left-radius: 4px; }
+  .chat-olmate strong { color: white; }
+  .voice-bar { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+  .voice-waves { display: flex; align-items: center; gap: 3px; flex: 1; }
+  .wave { width: 3px; border-radius: 2px; background: var(--orange); animation: wave 1.2s ease-in-out infinite; }
+  .wave:nth-child(1){height:8px;animation-delay:0s} .wave:nth-child(2){height:20px;animation-delay:.1s} .wave:nth-child(3){height:14px;animation-delay:.2s} .wave:nth-child(4){height:24px;animation-delay:.3s} .wave:nth-child(5){height:10px;animation-delay:.4s} .wave:nth-child(6){height:18px;animation-delay:.15s} .wave:nth-child(7){height:6px;animation-delay:.25s}
+  .voice-bar-txt { color: rgba(255,255,255,0.3); font-size: 12px; }
+  .mic-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--orange); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 0 0 8px rgba(244,82,30,0.15); flex-shrink: 0; }
 
-  .hero-logo-big { width: 100px; height: 100px; border-radius: 24px; margin-bottom: 32px; animation: fadeUp 0.5s ease both; box-shadow: 0 20px 60px rgba(244,82,30,0.3); }
+  .features-section { padding: 110px 24px; }
+  .features-inner { max-width: 1080px; margin: 0 auto; }
+  .commands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 60px; }
+  .command-card { background: white; border-radius: 20px; padding: 26px 22px; border: 1px solid rgba(244,82,30,0.1); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .command-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(244,82,30,0.1); border-color: rgba(244,82,30,0.25); }
+  .command-icon { font-size: 30px; margin-bottom: 14px; }
+  .command-quote { font-size: 13px; color: var(--orange-dark); font-style: italic; background: rgba(244,82,30,0.07); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.5; }
+  .command-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 17px; color: var(--dark); margin-bottom: 6px; }
+  .command-card p { font-size: 13px; color: var(--mid); line-height: 1.55; }
 
-  .social-proof { padding: 20px 24px 60px; text-align: center; }
-  .social-proof p { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); opacity: 0.6; margin-bottom: 16px; }
-  .stars { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; }
-  .star { color: var(--orange); font-size: 22px; }
-  .stars-label { font-size: 15px; font-weight: 600; color: var(--dark); opacity: 0.7; }
+  .app-section { background: white; padding: 110px 24px; }
+  .app-inner { max-width: 1080px; margin: 0 auto; }
+  .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 60px; }
+  .app-card { background: var(--cream); border-radius: 16px; padding: 22px 20px; border: 1px solid rgba(244,82,30,0.08); }
+  .app-card-icon { font-size: 26px; margin-bottom: 12px; }
+  .app-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: var(--dark); margin-bottom: 5px; }
+  .app-card p { font-size: 13px; color: var(--mid); line-height: 1.55; }
 
-  .section { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
-  .section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(34px, 5vw, 56px); letter-spacing: -1.5px; line-height: 1.05; color: var(--dark); margin-bottom: 20px; }
-  .section-sub { font-size: 18px; color: var(--mid); max-width: 560px; line-height: 1.6; margin-bottom: 64px; }
-
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
-  .step { background: white; border-radius: 24px; padding: 36px 32px; border: 1.5px solid rgba(244,82,30,0.1); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
-  .step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--orange); opacity: 0; transition: opacity 0.2s; }
-  .step:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(244,82,30,0.12); }
-  .step:hover::before { opacity: 1; }
-  .step-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 48px; color: rgba(244,82,30,0.12); line-height: 1; margin-bottom: 16px; }
-  .step-icon { font-size: 36px; margin-bottom: 16px; }
-  .step h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 22px; color: var(--dark); margin-bottom: 10px; }
+  .how-section { padding: 110px 24px; }
+  .how-inner { max-width: 1080px; margin: 0 auto; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 60px; }
+  .step { background: white; border-radius: 22px; padding: 32px 28px; border: 1px solid rgba(244,82,30,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+  .step:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(244,82,30,0.1); }
+  .step-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 52px; color: rgba(244,82,30,0.1); line-height: 1; margin-bottom: 14px; }
+  .step h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 21px; color: var(--dark); margin-bottom: 8px; }
   .step p { font-size: 15px; color: var(--mid); line-height: 1.6; }
 
-  .features-section { background: var(--dark); padding: 100px 24px; }
-  .features-inner { max-width: 1100px; margin: 0 auto; }
-  .features-section .section-label { color: var(--orange-light); }
-  .features-section h2 { color: white; }
-  .features-section .section-sub { color: rgba(255,255,255,0.5); }
+  .pricing-section { background: var(--dark); padding: 110px 24px; }
+  .pricing-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .pricing-section .section-label { color: var(--orange-light); }
+  .price-card { background: rgba(255,255,255,0.04); border: 2px solid var(--orange); border-radius: 28px; padding: 44px 40px; margin-top: 48px; }
+  .price-badge { display: inline-block; background: var(--orange); color: white; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 5px 14px; border-radius: 50px; margin-bottom: 20px; }
+  .price-main { display: flex; align-items: flex-end; justify-content: center; gap: 4px; margin-bottom: 6px; }
+  .price-dollar { font-size: 26px; font-weight: 700; color: white; margin-bottom: 10px; }
+  .price-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 72px; color: white; line-height: 1; }
+  .price-cents { font-size: 26px; font-weight: 700; color: white; margin-bottom: 10px; }
+  .price-per { font-size: 16px; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+  .price-trial { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 36px; }
+  .price-features { list-style: none; text-align: left; margin-bottom: 40px; display: flex; flex-direction: column; gap: 14px; }
+  .price-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .price-features li::before { content: '✓'; color: var(--orange); font-weight: 800; font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .price-cta { display: block; background: var(--orange); color: white; border: none; border-radius: 50px; padding: 16px 40px; font-size: 17px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s; box-shadow: 0 8px 28px rgba(244,82,30,0.35); text-decoration: none; text-align: center; }
+  .price-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+  .price-note { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 14px; }
 
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .feature-card { background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 28px 26px; transition: background 0.2s, border-color 0.2s; }
-  .feature-card:hover { background: rgba(244,82,30,0.1); border-color: rgba(244,82,30,0.3); }
-  .feature-icon { font-size: 32px; margin-bottom: 16px; }
-  .feature-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 19px; color: white; margin-bottom: 8px; }
-  .feature-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .cta-section { background: var(--orange); padding: 110px 24px; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'EZ'; position: absolute; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 340px; color: rgba(255,255,255,0.06); top: -80px; left: -10px; line-height: 1; pointer-events: none; }
+  .cta-section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(36px, 6vw, 68px); color: white; letter-spacing: -2px; line-height: 1.05; margin-bottom: 18px; }
+  .cta-section p { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 44px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+  .btn-white { background: white; color: var(--orange); border: none; border-radius: 50px; padding: 16px 40px; font-size: 17px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 8px 28px rgba(0,0,0,0.14); text-decoration: none; display: inline-block; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.2); }
 
-  .testimonials-section { padding: 100px 24px; background: white; }
-  .testimonials-inner { max-width: 1100px; margin: 0 auto; }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
-  .testimonial { background: var(--cream); border: 1.5px solid rgba(244,82,30,0.12); border-radius: 20px; padding: 28px 28px 24px; }
-  .testimonial-stars { color: var(--orange); font-size: 18px; margin-bottom: 14px; }
-  .testimonial p { font-size: 15px; color: var(--dark); line-height: 1.65; margin-bottom: 20px; font-style: italic; }
-  .testimonial-author { display: flex; align-items: center; gap: 12px; }
-  .author-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--orange); color: white; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; }
-  .author-name { font-weight: 700; font-size: 14px; color: var(--dark); }
-  .author-role { font-size: 13px; color: var(--mid); opacity: 0.7; }
-
-  .cta-section { background: var(--orange); padding: 100px 24px; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: 'EZ'; position: absolute; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 320px; color: rgba(255,255,255,0.06); top: -60px; left: -20px; line-height: 1; pointer-events: none; }
-  .cta-section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(38px, 6vw, 70px); color: white; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
-  .cta-section p { font-size: 19px; color: rgba(255,255,255,0.8); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.5; }
-  .btn-white { background: white; color: var(--orange); border: none; border-radius: 50px; padding: 16px 40px; font-size: 18px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 8px 30px rgba(0,0,0,0.15); text-decoration: none; display: inline-block; }
-  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
-
-  footer { background: var(--dark); padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  footer { background: #0E0600; padding: 44px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   .footer-logo { display: flex; align-items: center; gap: 10px; }
-  .footer-logo img { width: 32px; border-radius: 8px; }
-  .footer-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; color: white; }
-  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-logo img { width: 30px; border-radius: 7px; }
+  .footer-logo span { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 17px; color: white; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--orange-light); }
-  .footer-copy { color: rgba(255,255,255,0.25); font-size: 13px; width: 100%; }
+  .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; width: 100%; }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .section-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+  .section-h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(32px, 5vw, 54px); letter-spacing: -1.5px; line-height: 1.05; color: var(--dark); margin-bottom: 16px; }
+  .section-sub { font-size: 17px; color: var(--mid); max-width: 520px; line-height: 1.65; }
 
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
+  @keyframes wave { 0%, 100% { transform: scaleY(0.5); opacity: 0.6; } 50% { transform: scaleY(1); opacity: 1; } }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 640px) {
-    nav { padding: 14px 20px; }
+  @media (max-width: 768px) {
+    .olmate-inner { grid-template-columns: 1fr; gap: 48px; }
+    nav { padding: 12px 20px; }
     .nav-links { display: none; }
-    footer { flex-direction: column; padding: 36px 24px; }
+    footer { flex-direction: column; padding: 36px 20px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">
-    <img src="icon.png" alt="EZ Smoko logo">
-    <span>EZ Smoko</span>
-  </div>
+  <a href="#" class="nav-logo">
+    <img src="icon.png" alt="SRRTED.">
+    <span>SRRTED.</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#how">How it works</a></li>
+    <li><a href="#olmate">Ol'Mate</a></li>
     <li><a href="#features">Features</a></li>
-    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#pricing">Pricing</a></li>
   </ul>
   <a href="#download" class="nav-cta">Download free</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-blob hero-blob-1"></div>
   <div class="hero-blob hero-blob-2"></div>
-  <img src="icon.png" alt="EZ Smoko" class="hero-logo-big">
-  <div class="hero-badge"><span class="dot"></span> Now available on iOS &amp; Android</div>
-  <h1>Admin done in a<br><span class="orange">smoko break.</span></h1>
-  <p>EZ Smoko is the dead-simple job management app built for Australian tradies. Quotes, invoices, schedules — sorted before your tea goes cold.</p>
-  <div class="hero-buttons">
+  <img src="icon.png" alt="SRRTED." class="hero-logo">
+  <div class="hero-badge"><span class="dot"></span> Meet Ol'Mate — your AI admin assistant</div>
+  <h1>Your tradie admin,<br><span class="orange">done by voice.</span></h1>
+  <p class="hero-sub">Just talk. Ol'Mate handles the rest.</p>
+  <p>Tell Ol'Mate to lock in a job, fire off a quote, or send an invoice — all during your smoko break. No typing. No laptop. No dramas.</p>
+  <div class="hero-btns">
     <a href="#download" class="btn-primary">Get the app — it's free</a>
-    <a href="#how" class="btn-secondary">See how it works</a>
+    <a href="#olmate" class="btn-ghost">Meet Ol'Mate</a>
   </div>
 </section>
 
-<div class="social-proof">
-  <p>Trusted by tradies across Australia</p>
-  <div class="stars">
-    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-    <span class="stars-label">4.9 · 2,400+ reviews</span>
-  </div>
-</div>
-
-<section class="section" id="how">
-  <div class="section-label reveal">How it works</div>
-  <h2 class="reveal">Three steps.<br>That's actually it.</h2>
-  <p class="section-sub reveal">No manuals. No training days. If you can use your phone to text your missus, you can use EZ Smoko.</p>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">01</div>
-      <div class="step-icon">📋</div>
-      <h3>Log the job</h3>
-      <p>Add a job in seconds. Customer name, address, what needs doing. Done. EZ Smoko keeps it all in one place so nothing falls through the cracks.</p>
+<!-- OL'MATE -->
+<section class="olmate-section" id="olmate">
+  <div class="olmate-inner">
+    <div class="olmate-text">
+      <div class="section-label reveal">Your AI admin assistant</div>
+      <h2 class="section-h2 reveal" style="color:white">Meet Ol'Mate.</h2>
+      <p class="reveal">Ol'Mate is the voice AI built into SRRTED.. Hit the mic and tell him what you need — he'll book the job, write the quote, send the invoice, all while you finish your coffee.</p>
+      <p class="reveal" style="color:rgba(255,255,255,0.35);font-size:15px;">Available 24/7. Never loses a quote in the back of the ute. Doesn't need a lunch break.</p>
     </div>
-    <div class="step reveal">
-      <div class="step-num">02</div>
-      <div class="step-icon">💸</div>
-      <h3>Send a quote or invoice</h3>
-      <p>Tap, type, send. Professional-looking quotes and invoices out the door while you're still on site. No laptop needed.</p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">03</div>
-      <div class="step-icon">✅</div>
-      <h3>Get paid faster</h3>
-      <p>Customers can pay straight from the invoice. You get notified the moment money lands. Less chasing, more doing.</p>
+    <div class="voice-ui reveal">
+      <div class="voice-ui-header">
+        <div class="voice-avatar">🤙</div>
+        <div>
+          <div class="voice-name">Ol'Mate</div>
+          <div class="voice-status">AI Admin Assistant · Listening…</div>
+        </div>
+      </div>
+      <div class="chat-bubble chat-user">"Ol'Mate, lock in a plumbing job for Dave Richards, Friday arvo."</div>
+      <div class="chat-bubble chat-olmate"><strong>Done, mate.</strong> Job booked for Dave Richards — Friday 2:00 PM. Want me to send him a confirmation text?</div>
+      <div class="chat-bubble chat-user">"Yeah, and send a quote for $850 while you're at it."</div>
+      <div class="chat-bubble chat-olmate"><strong>Quote sent.</strong> $850 quote emailed to Dave. I'll let you know when he opens it. 👍</div>
+      <div class="voice-bar">
+        <div class="voice-waves">
+          <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+          <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
+        </div>
+        <span class="voice-bar-txt">Listening…</span>
+        <button class="mic-btn" aria-label="Microphone">🎙</button>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- WHAT OL'MATE CAN DO -->
 <section class="features-section" id="features">
   <div class="features-inner">
-    <div class="section-label reveal">What's included</div>
-    <h2 class="reveal" style="color:white">Everything you need.<br>Nothing you don't.</h2>
-    <p class="section-sub reveal">No bloated dashboards. No features you'll never use. Just the stuff that actually matters for running a trade business.</p>
-    <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">⚡</div>
-        <h3>Instant quotes</h3>
-        <p>Build and send a professional quote in under two minutes. Templates for common jobs make it even faster.</p>
+    <div class="section-label reveal">What Ol'Mate can do</div>
+    <h2 class="section-h2 reveal">Just say the word.</h2>
+    <p class="section-sub reveal">Ol'Mate understands plain Aussie English. No special commands, no learning curve — just talk like you normally would.</p>
+    <div class="commands-grid">
+      <div class="command-card reveal">
+        <div class="command-icon">📋</div>
+        <div class="command-quote">"Ol'Mate, new job — hot water system for Karen on Tuesday."</div>
+        <h3>Book jobs</h3>
+        <p>Ol'Mate logs the job, assigns it, and keeps your schedule straight.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">📅</div>
+      <div class="command-card reveal">
+        <div class="command-icon">💸</div>
+        <div class="command-quote">"Send a quote for $1,200 to the Smiths."</div>
+        <h3>Send quotes</h3>
+        <p>Professional quotes emailed to your client in seconds — no typing required.</p>
+      </div>
+      <div class="command-card reveal">
+        <div class="command-icon">🧾</div>
+        <div class="command-quote">"Invoice the Hendersons for today's job, $640."</div>
+        <h3>Create invoices</h3>
+        <p>Ol'Mate generates and sends a PDF invoice. Done on smoko.</p>
+      </div>
+      <div class="command-card reveal">
+        <div class="command-icon">👷</div>
+        <div class="command-quote">"Put Tommo on the Redfern job Thursday."</div>
+        <h3>Manage your team</h3>
+        <p>Assign jobs to workers, track who's where, keep your crew organised.</p>
+      </div>
+      <div class="command-card reveal">
+        <div class="command-icon">📍</div>
+        <div class="command-quote">"What's on today?"</div>
+        <h3>Check your schedule</h3>
+        <p>Ask Ol'Mate what's happening and he'll run you through the day's jobs.</p>
+      </div>
+      <div class="command-card reveal">
+        <div class="command-icon">💰</div>
+        <div class="command-quote">"How much have I invoiced this month?"</div>
+        <h3>Track your money</h3>
+        <p>Revenue, outstanding invoices, GST — Ol'Mate has the numbers when you need them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP FEATURES -->
+<section class="app-section">
+  <div class="app-inner">
+    <div class="section-label reveal">Everything else built in</div>
+    <h2 class="section-h2 reveal">The full toolkit.<br>Nothing extra to buy.</h2>
+    <p class="section-sub reveal">Beyond Ol'Mate, SRRTED. has everything a solo tradie or small crew needs to run a business from their phone.</p>
+    <div class="app-grid">
+      <div class="app-card reveal">
+        <div class="app-card-icon">📄</div>
+        <h3>Quotes &amp; invoices</h3>
+        <p>Professional PDFs with your branding, emailed straight to clients.</p>
+      </div>
+      <div class="app-card reveal">
+        <div class="app-card-icon">📅</div>
         <h3>Job scheduling</h3>
-        <p>See your whole week at a glance. Drag jobs around. Know exactly where you need to be and when.</p>
+        <p>See your full week at a glance. Drag, drop, done.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">💳</div>
-        <h3>Easy payments</h3>
-        <p>Accept card payments directly through the app. Money in your account, not stuck in accounts receivable.</p>
+      <div class="app-card reveal">
+        <div class="app-card-icon">👥</div>
+        <h3>Team management</h3>
+        <p>Add workers, assign jobs, manage roles. Everyone stays in the loop.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">📸</div>
+      <div class="app-card reveal">
+        <div class="app-card-icon">💳</div>
+        <h3>Payments</h3>
+        <p>Clients pay straight from the invoice. You get notified the moment money lands.</p>
+      </div>
+      <div class="app-card reveal">
+        <div class="app-card-icon">📸</div>
         <h3>Job photos</h3>
-        <p>Snap before and afters on site. They attach straight to the job record. No more lost pics in your camera roll.</p>
+        <p>Before and afters attached to the job record. No more lost pics in your camera roll.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🔔</div>
-        <h3>Customer reminders</h3>
-        <p>Automatic SMS reminders so customers don't forget appointments. You stop being the one who has to follow up.</p>
+      <div class="app-card reveal">
+        <div class="app-card-icon">🚗</div>
+        <h3>Mileage tracker</h3>
+        <p>Log work trips automatically. ATO-ready records come tax time.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">📊</div>
-        <h3>Simple reporting</h3>
-        <p>See what you've earned, what's outstanding, and where your busiest months are. Tax time gets a whole lot easier.</p>
+      <div class="app-card reveal">
+        <div class="app-card-icon">📊</div>
+        <h3>GST &amp; BAS</h3>
+        <p>Quarterly GST summaries based on your invoices. Less grief for your accountant.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials-section" id="reviews">
-  <div class="testimonials-inner">
-    <div class="section-label reveal">Real tradies. Real results.</div>
-    <h2 class="reveal">They said it.<br>We didn't.</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Used to spend Sunday nights doing invoices. Now I do them on smoko Friday and I'm done. Couldn't go back."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">DS</div>
-          <div><div class="author-name">Damo S.</div><div class="author-role">Plumber · Brisbane</div></div>
-        </div>
+      <div class="app-card reveal">
+        <div class="app-card-icon">⚠️</div>
+        <h3>SWMS</h3>
+        <p>Safe Work Method Statements built in. Stay compliant on site.</p>
       </div>
-      <div class="testimonial reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"My accountant actually complimented me this year. First time in 12 years of running my own business. Cheers EZ Smoko."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">KM</div>
-          <div><div class="author-name">Karen M.</div><div class="author-role">Electrician · Melbourne</div></div>
-        </div>
-      </div>
-      <div class="testimonial reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Dead simple. My apprentice set it up for me in ten minutes and I've not looked back. Getting paid way faster too."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">BT</div>
-          <div><div class="author-name">Bazza T.</div><div class="author-role">Builder · Adelaide</div></div>
-        </div>
+      <div class="app-card reveal">
+        <div class="app-card-icon">🔄</div>
+        <h3>Xero &amp; MYOB sync</h3>
+        <p>Invoices and payments sync to your accounting software automatically.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-label reveal">How it works</div>
+    <h2 class="section-h2 reveal">Three steps.<br>That's actually it.</h2>
+    <p class="section-sub reveal">If you can leave a voice note for your missus, you can use SRRTED..</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Download &amp; sign up</h3>
+        <p>Free to download. Two minutes to set up. Pick your role — business owner or worker — and you're in.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Hit the mic, talk to Ol'Mate</h3>
+        <p>Tell Ol'Mate what you need — a job booked, a quote sent, an invoice fired off. He handles it while you're still on smoko.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Get paid. Go home.</h3>
+        <p>Less admin. Less chasing. More time doing the work — or knocking off early. That's the whole point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="section-h2 reveal" style="color:white">Simple. One price.<br>No surprises.</h2>
+    <div class="price-card reveal">
+      <div class="price-badge">14-DAY FREE TRIAL</div>
+      <div class="price-main">
+        <span class="price-dollar">$</span>
+        <span class="price-num">34</span>
+        <span class="price-cents">.99</span>
+        <span class="price-per">/mo</span>
+      </div>
+      <p class="price-trial">Free for 14 days, then $34.99/month. Cancel any time.</p>
+      <ul class="price-features">
+        <li>Ol'Mate AI voice assistant — unlimited use</li>
+        <li>Full job management &amp; scheduling</li>
+        <li>Quotes &amp; invoices with PDF export</li>
+        <li>Team management &amp; worker roles</li>
+        <li>Mileage tracking &amp; GST / BAS summaries</li>
+        <li>Xero &amp; MYOB accounting sync</li>
+        <li>SWMS &amp; job photos</li>
+        <li>Sign in with Apple</li>
+      </ul>
+      <a href="#download" class="price-cta">Start your free 14-day trial</a>
+      <p class="price-note">No credit card needed to start. Cancel any time in your Apple ID settings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="cta-section" id="download">
-  <h2>Ready to sort your<br>smoko admin?</h2>
-  <p>Free to download. No credit card. No lock-in. Just less paperwork.</p>
-  <a href="#" class="btn-white">Download EZ Smoko free</a>
+  <h2>Your smoko break<br>just got productive.</h2>
+  <p>Download SRRTED. free and let Ol'Mate handle your admin.</p>
+  <a href="#" class="btn-white">Download SRRTED. free</a>
 </section>
 
 <footer>
   <div class="footer-logo">
-    <img src="icon.png" alt="EZ Smoko">
-    <span>EZ Smoko</span>
+    <img src="icon.png" alt="SRRTED.">
+    <span>SRRTED.</span>
   </div>
   <div class="footer-links">
-    <a href="privacy.html">Privacy policy</a>
-    <a href="terms.html">Terms of use</a>
+    <a href="#">Privacy policy</a>
+    <a href="#">Terms of use</a>
     <a href="#">Contact</a>
     <a href="#">Support</a>
   </div>
-  <p class="footer-copy">© 2026 EZ Smoko. Built for Australian tradies.</p>
+  <p class="footer-copy">© 2026 SRRTED.. Built for Australian tradies.</p>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+        obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
